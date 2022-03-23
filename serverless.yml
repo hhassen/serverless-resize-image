@@ -34,7 +34,5 @@ functions:
       - http:
           path: image
           method: post
-      # add cloudwatch logs
-      - cloudwatchLog: '/lambda/imageResize'
     environment:
       S3_BUCKET: ${self:custom.bucket}
