@@ -1,6 +1,6 @@
 service: image-resize
 
-frameworkVersion: ">=2.24.0"
+frameworkVersion: '2 || 3'
 
 custom:
   # bucket: ${ssm:/database/testdb/endpoint~true}
