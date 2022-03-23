@@ -1,0 +1,33 @@
+service: image-resize
+
+frameworkVersion: ">=2.24.0"
+
+custom:
+  # bucket: ${ssm:/database/testdb/endpoint~true}
+  bucket: aws-bucket-hhassen-2022mars
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 128
+  timeout: 10
+  stage: dev
+  region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:PutObjectAcl
+          Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+
+functions:
+  imageResize:
+    handler: app.lambdaHandler
+    events:
+      - http:
+          path: image
+          method: post
+    environment:
+      S3_BUCKET: ${self:custom.bucket}
