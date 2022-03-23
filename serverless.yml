@@ -22,6 +22,10 @@ provider:
             - s3:PutObject
             - s3:PutObjectAcl
           Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+  # add x-ray tracing
+  tracing:
+    apiGateway: true
+    lambda: true
 
 functions:
   imageResize:
@@ -30,5 +34,7 @@ functions:
       - http:
           path: image
           method: post
+      # add cloudwatch logs
+      - cloudwatchLog: '/lambda/imageResize'
     environment:
       S3_BUCKET: ${self:custom.bucket}
