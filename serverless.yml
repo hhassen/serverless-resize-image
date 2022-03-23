@@ -12,7 +12,7 @@ provider:
   lambdaHashingVersion: 20201221
   memorySize: 128
   timeout: 10
-  stage: dev
+  stage: ${opt:stage, "dev"}
   region: us-east-1
   iam:
     role:
