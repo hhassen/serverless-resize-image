@@ -26,6 +26,9 @@ provider:
   tracing:
     apiGateway: true
     lambda: true
+ apiGateway:
+  binaryMediaTypes:
+    - 'multipart/form-data'
 
 functions:
   imageResize:
