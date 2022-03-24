@@ -1,9 +1,9 @@
-service: image-resize
+service: resize-image
 
 frameworkVersion: '2 || 3'
 
 custom:
-  bucket: ${ssm:/image-resize/s3/name~true}
+  bucket: ${ssm:/resize-image/s3/name~true}
   #bucket: aws-bucket-hhassen-2022mars
 
 provider:
