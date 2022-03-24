@@ -16,7 +16,7 @@ The architecture of the project is the following :
 
 
 ## Infra as a Code
-All the infrastructure is done using IaaC practice. I used both `serverless framework` and `terraform` to provision the infrastrucutre.
+All the infrastructure is done using IaaC practice. I used both `serverless framework` and `terraform` to provision the infrastructure.
 
 #### When to use Terraform and when to use Serverless Framework:
 * Serverless for app-specific infrastructure : here I used it to provision :
@@ -60,8 +60,8 @@ custom:
 
 
 ## CI/CD
-All the steps, even the Terraform infrastructre, were automated using *Github Actions* to implement CI/CD best practices.
-No actions is needed from the developers apart from pushing their code to the Github repo.
+All the steps, even the Terraform infrastructure, were automated using *Github Actions* to implement CI/CD best practices.
+No action is needed from the developers apart from pushing their code to the Github repo.
 
 We have 2 different jobs to deploy the infrastructure and the application : a **terraform job** and a **build and deploy job**.
 
@@ -78,7 +78,7 @@ Some of these steps only run from pull requests; others only run when you merge 
 
 ### Serverless CI/CD
 This job provisions app-specific infrastructure.
-This job is triggered everytime we push changes to `dev` or `master` branchs.
+This job is triggered every time we push changes to `dev` or `master` branches.
 This job builds and deploys the lambda package using a Github-hosted runner (Ubuntu).
 
 ## Logs and tracing
@@ -96,4 +96,4 @@ Different mechanisms can be used for authentication and authorization in API Gat
 * **Standard AWS IAM roles and policies** offer flexible and robust access controls that can be applied to an entire API or individual methods.
 * **Amazon Cognito user pools** let you create customizable authentication and authorization solutions for your REST APIs. 
 
-#### 2. Move shared infrastrucutre in a seperate repo
+#### 2. Move shared infrastructure in a separate repo
