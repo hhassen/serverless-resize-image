@@ -7,9 +7,6 @@ on:
       - master
       - dev
 
-env:
-  TF_LOG: INFO
-
 jobs:
   terraform:
     name: "Terraform"
