@@ -6,7 +6,6 @@ on:
     branches:
       - master
       - dev
-  pull_request:
 
 jobs:
   deploy:
