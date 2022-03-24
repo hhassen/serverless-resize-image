@@ -4,7 +4,7 @@ frameworkVersion: '2 || 3'
 
 custom:
   bucket: ${ssm:/resize-image/s3/name~true}
-  #bucket: aws-bucket-hhassen-2022mars
+  #bucket: resize-image-hhassen-2022-bucket
 
 provider:
   name: aws
