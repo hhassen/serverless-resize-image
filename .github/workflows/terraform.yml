@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  TF_LOG: DEBUG
+  TF_LOG: INFO
 
 jobs:
   terraform:
