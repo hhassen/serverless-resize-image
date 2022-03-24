@@ -3,8 +3,8 @@ service: image-resize
 frameworkVersion: '2 || 3'
 
 custom:
-  # bucket: ${ssm:/database/testdb/endpoint~true}
-  bucket: aws-bucket-hhassen-2022mars
+  bucket: ${ssm:/image-resize/s3/name~true}
+  #bucket: aws-bucket-hhassen-2022mars
 
 provider:
   name: aws
